@@ -423,7 +423,6 @@ Dart 支援使用 Map 字面量和 Map 類型來建構 Map 物件
 //   print('Map 集合中的所有值: ${map.values}');
 // }
 
-
 // 2.9.2 常用方法
 
 // 運算符號[Object key] : 獲取指定 key 的值，如果該 key 不存在，則返回 null
@@ -433,3 +432,86 @@ Dart 支援使用 Map 字面量和 Map 類型來建構 Map 物件
 // containsKey(Object key) : 判斷 Map 集合中是否包含指定的鍵，若包含則返回 true；反之則返回 false
 
 // containsValue(Object value) : 判斷 Map 集合是否包含指定的值，若包含則返回 true；反之則返回 false
+
+// void main() {
+//   var map = {1: 'dooooog', 'second': 'gash', 'age': 3};
+
+//   // 列印原 Map
+//   print('原 Map: $map');
+
+//   // 獲取 Map 集合中鍵為 age 的值
+//   print('Map 集合中鍵為 age 的值: ${map['age']}');
+
+//   // 在 Map 集合中增加鍵值對
+//   map['name'] = 'Bob';
+//   print('增加鍵值對後的 Map : $map');
+
+//   // 修改 Map 集合中鍵為 name 的值
+//   map['name'] = 'Jobs';
+//   print('修改鍵 name 的值後的 Map : $map');
+
+//   // 判斷 Map 集合中是否包含鍵 age
+//   print('Map 集合中是否包含鍵 age : ${map.containsKey('age')}');
+
+//   // 判斷 Map 集合中是否包含值 32
+//   print('Map 集合是否包含值 32 : ${map.containsValue(32)}');
+
+//   // 在 Map 字面量前增加 const 關鍵字可以創鍵 Map 類型的編譯時常數
+//   final constantMap = const {2: "helmet", 10: "scooter", 18: "car"};
+// }
+
+// 2.10 符文
+
+/*
+在 Dart 中，符文對應的類型為 Runes。
+Unicode 為世界上所有書寫系統中使用的每個字母、數字和符號定義了唯一的數值。
+由於 Dart 字串是 UTF-16 程序單元的序列，
+因此在字串中表示 Unicode 程式點 需要特殊的語法。
+
+表示 Unicode 程式點的常用形式是: \uXXXX，
+其中 XXXX 是 4 位十六進位數。
+
+例如: 心臟字元為 \u2665。
+
+要指定多於或少於 4 個十六進位數字，
+需將值放在大括號中。
+
+例如:
+笑的表情符號是 \u{1f600}。
+
+程式點 (code point) : 程式點是指編碼字元集中，
+字元對應的數字有效範圍從 \u0000 到 \u10FFFF，
+其中 \u0000 到 \uFFFF 為基底字元，
+\u10000 到 \u10FFFF 為增補字元。
+
+程式單元 (code unit) : 程式單元對程式點進行編碼得到的 1 或 2 個 16 位元序列。
+其中基底字元的程式點直接用一個相同值的程式單元表示，
+增補字元的程式點用兩個程式單元進行編碼。
+
+String 類別有幾個屬性可用於提取符文資訊，
+使用 codeUnits 屬性返回 16 位元程式單元，
+使用 runes 屬性獲取字串的符文
+*/
+
+// void main() {
+//   // 創建符文字串
+//   var clapping = '\u{1f44f}';
+
+//   // 列印符文
+//   print('符文字串 : $clapping');
+
+//   // 返回此字串的 UTF-16 程式單元
+//   print('此字串的 UTF-16 程式單元 : ${clapping.codeUnits}');
+
+//   // 返回此字串的 Unicode 程式點
+//   print('此字串的程式點: ${clapping.runes.toList()}');
+
+//   // 建構 Runes 物件
+//   Runes input =
+//       Runes('\u2665 \u{1f605} \u{1f60e} \u{1f47b} \u{1f596} \u{1f44d}');
+
+//   // 將 Runes 物件轉為 String 並列印
+//   print('將 Runes 物件轉為 String: ${String.fromCharCodes(input)}');
+// }
+
+// Chapter 2 結束
