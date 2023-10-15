@@ -8,7 +8,7 @@
  * 因此有額外轉成dart
  * 
  * 邏輯:
- * 1.i
+ * 1. 定義一個 Money 類
  * 2. 定義一個抽象類別 Employee
  * 3. 定義一個 EmployeeRecord 類，用於存儲員工資訊
  * 4. 自定義異常 InvalidEmployeeType
